@@ -475,7 +475,7 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 <p>Jugo + Sandwich</p>
 <div class="precio">S/ 15</div>
 
-<button class="carrito" onclick="agregarCarrito('Combo Tropical')">
+<button class="carrito" onclick="agregar('Combo Tropical')">
 🛒 Agregar al carrito
 </button>
 
@@ -491,7 +491,7 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 <p>Batido + Postre</p>
 <div class="precio">S/ 18</div>
 
-<button class="carrito" onclick="agregarCarrito('Combo Berry')">
+<button class="carrito" onclick="agregar('Combo Berry')">
 🛒 Agregar al carrito
 </button>
 
@@ -507,7 +507,7 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 <p>Jugo Verde + Ensalada</p>
 <div class="precio">S/ 20</div>
 
-<button class="carrito" onclick="agregarCarrito('Combo Detox')">
+<button class="carrito" onclick="agregar('Combo Detox')">
 🛒 Agregar al carrito
 </button>
 
@@ -517,15 +517,38 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 </div>
 </section>
 
-<!-- SCRIPT DEL CARRITO -->
-<script>
-let contador = 0;
+<!-- SCRIPT WHATSAPP -->
 
-function agregarCarrito(producto){
-    contador++;
-    alert(producto + " agregado al carrito 🛒");
+<script>
+let carrito = [];
+
+function agregar(producto){
+    carrito.push(producto);
+    alert(producto + " agregado 🛒");
+}
+
+function enviarWhatsApp(){
+
+    let numero = "51947838690"; // TU NÚMERO (sin +)
+
+    let mensaje = "Hola quiero pedir:%0A";
+
+    carrito.forEach((item, i) => {
+        mensaje += (i+1) + ". " + item + "%0A";
+    });
+
+    let url = "https://wa.me/" + numero + "?text=" + mensaje;
+
+    window.open(url, "_blank");
 }
 </script>
+
+<!-- BOTÓN FINAL -->
+<div style="text-align:center; margin-top:30px;">
+    <button class="carrito" onclick="enviarWhatsApp()">
+        📲 Enviar pedido por WhatsApp
+    </button>
+</div>
 <!-- CARTA -->
 
 <section id="carta">
