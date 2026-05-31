@@ -466,6 +466,7 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 
 <div class="cards">
 
+<!-- COMBO 1 -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?q=80&w=1200&auto=format&fit=crop">
 
@@ -473,11 +474,15 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 <h3>Combo Tropical</h3>
 <p>Jugo + Sandwich</p>
 <div class="precio">S/ 15</div>
-<button class="carrito">🛒 Agregar al carrito</button>
-</div>
+
+<button class="carrito" onclick="agregarCarrito('Combo Tropical')">
+🛒 Agregar al carrito
+</button>
 
 </div>
+</div>
 
+<!-- COMBO 2 -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop">
 
@@ -485,11 +490,15 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 <h3>Combo Berry</h3>
 <p>Batido + Postre</p>
 <div class="precio">S/ 18</div>
-<button class="carrito">🛒 Agregar al carrito</button>
-</div>
+
+<button class="carrito" onclick="agregarCarrito('Combo Berry')">
+🛒 Agregar al carrito
+</button>
 
 </div>
+</div>
 
+<!-- COMBO 3 -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=1200&auto=format&fit=crop">
 
@@ -497,15 +506,26 @@ En El Rincón del Jugo encontrarás la combinación perfecta entre salud y dulzu
 <h3>Combo Detox</h3>
 <p>Jugo Verde + Ensalada</p>
 <div class="precio">S/ 20</div>
-<button class="carrito">🛒 Agregar al carrito</button>
+
+<button class="carrito" onclick="agregarCarrito('Combo Detox')">
+🛒 Agregar al carrito
+</button>
+
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
+<!-- SCRIPT DEL CARRITO -->
+<script>
+let contador = 0;
+
+function agregarCarrito(producto){
+    contador++;
+    alert(producto + " agregado al carrito 🛒");
+}
+</script>
 <!-- CARTA -->
 
 <section id="carta">
